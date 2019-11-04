@@ -1,0 +1,5 @@
+.portfolio {
+    width: 100vw;
+    padding-top: 6vh;
+    overflow-y: scroll;
+}

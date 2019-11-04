@@ -1,0 +1,52 @@
+:root {
+    --header-hgt: 6vh;
+}
+
+.header {
+    display: flex;
+    flex-flow: row;
+    justify-content: initial;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: var(--header-hgt);
+    background-color: #393e46;
+    z-index: 100;
+
+    font-family: 'Roboto', 'sans-serif';
+}
+
+.tab-list {
+    flex-grow: 1;
+    display: flex;
+    flex-flow: row;
+    justify-content: initial;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+.logo-sec {
+    float: left;
+}
+
+.header-logo {
+    width: calc(var(--header-hgt)*2);
+    padding-left: 5%;
+}
+
+.react-sec {
+    width: 10vw;
+    float: right;
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-around;
+    align-self: flex-end;
+}
+
+.react-sec p {
+    position: relative;
+    color: #ffffff;
+    font-size: calc(var(--header-hgt)/3.25);
+    /*text-shadow: -1px 0 #999999, 1px 0 #999999, 0 1px #999999, 0 -1px #999999;*/
+}

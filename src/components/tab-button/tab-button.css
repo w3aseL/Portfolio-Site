@@ -1,0 +1,40 @@
+:root {
+  --header-hgt: 6vh;
+}
+
+.tab-div {
+  padding-left: 0.5vw;
+  padding-right: 0.5vw;
+}
+
+.tab-div::after {
+  content: " ";
+  display: block;
+  padding-bottom: 0;
+  border-bottom: solid calc(var(--header-hgt) * 0.05) white;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+
+.tab-item {
+    display: inline-block;
+    list-style: none;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-bottom: calc(var(--header-hgt) * 0.3);
+    padding-top: calc(var(--header-hgt) * 0.3);
+    text-align: center;
+    font-size: calc(var(--header-hgt)/3.25);
+
+    color: white;
+  }
+
+  .tab-div:hover:after {
+    transform: scaleX(1);
+  }
+
+  .tab-div.active::after {
+    border-bottom: solid calc(var(--header-hgt) * 0.05) white;
+    transform: scaleX(1);
+    transition: transform 250ms ease-in-out;
+  }

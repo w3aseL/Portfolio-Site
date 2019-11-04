@@ -1,26 +1,31 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/header/index';
+import ContentController from './ContentController';
+import Footer from './components/footer/index';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeTab: 'Home'
+    };
+    this.handleTabState = this.handleTabState.bind(this);
+  }
+
+  handleTabState(data) {
+    this.setState({activeTab: data});
+  }
+
+  render(){
+    return (
+      <div>
+        <Header updateTab={this.handleTabState} />
+        <ContentController activeTab={this.state.activeTab} />
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;

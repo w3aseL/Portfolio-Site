@@ -1,0 +1,52 @@
+.construction {
+    background-color: #DEA731;
+    height: 88vh;
+    width: 100vw;
+    padding-top: 6vh;
+    display: flex;
+    flex-flow: row;
+    justify-content: initial;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+    z-index: 50;
+}
+
+.construction .wrap-img {
+    position: relative;
+    overflow: hidden;
+
+    width: 50vw;
+
+    z-index: 51;
+}
+
+.wrap-img .pingu {
+    background-color: #DEA731;
+    position: absolute;
+    top: 0;
+    left: -65%;
+}
+
+.construction .text {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    z-index: inherit;
+
+    width: 50vw;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.construction .text h1 {
+    font-size: 5vh;
+    font-family: 'Archivo', 'sans-serif';
+}
+
+.construction .text p {
+    font-size: 2vh;
+    font-family: 'Open Sans', 'sans-serif';
+}
