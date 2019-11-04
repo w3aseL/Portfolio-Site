@@ -15,6 +15,10 @@ class Home extends React.Component {
                         <img src={require('../assets/pingu_brick_wall.png')} class="pingu" />
                     </div>
                 </div>
+
+                /*<div class="home">
+
+                </div>*/
             );
         else return null;
     }

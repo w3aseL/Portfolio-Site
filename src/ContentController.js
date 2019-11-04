@@ -5,6 +5,7 @@ import logo from './logo.svg';
 import Home from './pages/home';
 import About from './pages/about';
 import Portfolio from './pages/portfolio';
+import Socials from './pages/socials';
 
 class ContentController extends React.Component {
     render() {
@@ -13,6 +14,7 @@ class ContentController extends React.Component {
                 <Home activeTab={this.props.activeTab} />
                 <About activeTab={this.props.activeTab} />
                 <Portfolio activeTab={this.props.activeTab} />
+                <Socials activeTab={this.props.activeTab} />
             </React.Fragment>
         );
     }

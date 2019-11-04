@@ -1,3 +1,9 @@
+.home {
+
+}
+
+/*     Construction stuffs      */
+
 .construction {
     background-color: #DEA731;
     height: 88vh;
@@ -25,7 +31,8 @@
     background-color: #DEA731;
     position: absolute;
     top: 0;
-    left: -65%;
+    height: 100%;
+    left: calc(-100vw * 0.15);
 }
 
 .construction .text {
@@ -49,4 +56,51 @@
 .construction .text p {
     font-size: 2vh;
     font-family: 'Open Sans', 'sans-serif';
+}
+
+@media screen and (max-width: 1024px) {
+    .construction {
+        background-color: #DEA731;
+        height: 88vh;
+        width: 100vw;
+        padding-top: 6vh;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+        align-items: center;
+        overflow-x: hidden;
+        overflow-y: hidden;
+    
+        z-index: 50;
+    }
+
+    .construction .text {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: center;
+        z-index: inherit;
+        text-align: center;
+        
+        overflow-x: hidden;
+        overflow-y: hidden;
+    }
+
+    .construction .wrap-img {
+        position: relative;
+        overflow-x: hidden;
+        flex-grow: 1;
+    
+        width: 100vw;
+        height: 44vh;
+
+        z-index: 51;
+    }
+
+    .wrap-img .pingu {
+        background-color: #DEA731;
+        position: absolute;
+        height: 100%;
+        left: calc(-100vh * 0.25);
+    }
 }

@@ -36,12 +36,13 @@
 }
 
 .react-sec {
-    width: 10vw;
+    padding-right: 2.5%;
     float: right;
     display: flex;
     flex-flow: row-reverse;
-    justify-content: space-around;
+    justify-content: initial;
     align-self: flex-end;
+    white-space: nowrap;
 }
 
 .react-sec p {

@@ -30,6 +30,7 @@ class Header extends React.Component {
                     <TabButton activeTab={this.state.activeTab} label="Home" onClick={this.updateTabOnClick} />
                     <TabButton activeTab={this.state.activeTab} label="About" onClick={this.updateTabOnClick} />
                     <TabButton activeTab={this.state.activeTab} label="Portfolio" onClick={this.updateTabOnClick} />
+                    <TabButton activeTab={this.state.activeTab} label="Social" onClick={this.updateTabOnClick} />
                 </div>
         
                 <div class="react-sec">
