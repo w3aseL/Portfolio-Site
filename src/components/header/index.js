@@ -1,25 +1,15 @@
 import React from 'react';
 import './header.css';
 
+import { withRouter } from 'react-router-dom';
+
 import logo from '../../assets/logo.png';
 import TabButton from '../tab-button/index';
 
 class Header extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            activeTab: 'Home'
-        };
-
-        this.updateTabOnClick = this.updateTabOnClick.bind(this);
-    }
-
-    updateTabOnClick(tab) {
-        this.setState({activeTab: tab});
-        this.props.updateTab(tab);
-    }
-
     render() {
+        var routes = this.props.routes
+
         return (
             <div class="header">
                 <div class="logo-sec">
@@ -27,10 +17,7 @@ class Header extends React.Component {
                 </div>
 
                 <div class="tab-list">
-                    <TabButton activeTab={this.state.activeTab} label="Home" onClick={this.updateTabOnClick} />
-                    <TabButton activeTab={this.state.activeTab} label="About" onClick={this.updateTabOnClick} />
-                    <TabButton activeTab={this.state.activeTab} label="Portfolio" onClick={this.updateTabOnClick} />
-                    <TabButton activeTab={this.state.activeTab} label="Social" onClick={this.updateTabOnClick} />
+                    {Object.keys(routes).map((key, i) => (<TabButton label={key} to={routes[key].to} exact={routes[key].to} location={this.props.location} />))}
                 </div>
         
                 <div class="react-sec">
@@ -42,4 +29,4 @@ class Header extends React.Component {
 }
 
 
-export default Header;
+export default withRouter(Header);

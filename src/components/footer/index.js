@@ -28,7 +28,7 @@ class Footer extends React.Component {
                 </div>
         
                 <div class="text-footer">
-                    <p class="copyright-text">{'\u00A9'} 2019 Noah Templet</p>
+                    <p class="copyright-text">{'\u00A9'} {new Date().getFullYear()} Noah Templet</p>
                 </div>
             </div>
         );

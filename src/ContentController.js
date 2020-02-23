@@ -1,20 +1,54 @@
 import React from 'react';
 import './contentcontroller.css';
-import logo from './logo.svg';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    useLocation
+} from "react-router-dom";
+import Header from './components/header/index'
+import Footer from './components/footer/index'
+import Home from './pages/home/index';
+import About from './pages/about/index';
+import Portfolio from './pages/portfolio/index';
+import Socials from './pages/socials/index';
 
-import Home from './pages/home';
-import About from './pages/about';
-import Portfolio from './pages/portfolio';
-import Socials from './pages/socials';
+const ROUTES = {
+    Home: {
+        to: '/',
+        exact: true,
+        component: Home
+    },
+    About: {
+        to: '/about',
+        exact: false,
+        component: About
+    },
+    Portfolio: {
+        to: '/portfolio',
+        exact: false,
+        component: Portfolio
+    },
+    Socials: {
+        to: '/socials',
+        exact: false,
+        component: Socials
+    }
+}
 
 class ContentController extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Home activeTab={this.props.activeTab} />
-                <About activeTab={this.props.activeTab} />
-                <Portfolio activeTab={this.props.activeTab} />
-                <Socials activeTab={this.props.activeTab} />
+                <Router>
+                    <Header routes={ROUTES} />
+                    <Switch>
+                        {Object.keys(ROUTES).map((key, i) => (
+                            <Route exact={ROUTES[key].exact} path={ROUTES[key].to} component={ROUTES[key].component}/>
+                        ))}
+                    </Switch>
+                </Router>
+                <Footer />
             </React.Fragment>
         );
     }
