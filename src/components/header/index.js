@@ -35,7 +35,7 @@ class Header extends React.Component {
                 </div>
 
                 <div class="tab-list">
-                    {Object.keys(routes).map((key, i) => (<TabButton label={key} to={routes[key].to} exact={routes[key].to} location={this.props.location} />))}
+                    {Object.keys(routes).map((key, i) => (routes[key].showOnTabBar ? (<TabButton label={key} to={routes[key].to} exact={routes[key].to} location={this.props.location} />) : null))}
                 </div>
         
                 <a class="react-sec" href="https://reactjs.org/">

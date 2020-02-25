@@ -18,22 +18,26 @@ const ROUTES = {
     Home: {
         to: '/',
         exact: true,
-        component: Home
+        component: Home,
+        showOnTabBar: false
     },
     About: {
         to: '/about',
         exact: false,
-        component: About
+        component: About,
+        showOnTabBar: true
     },
     Portfolio: {
         to: '/portfolio',
         exact: false,
-        component: Portfolio
+        component: Portfolio,
+        showOnTabBar: true
     },
     Socials: {
         to: '/socials',
         exact: false,
-        component: Socials
+        component: Socials,
+        showOnTabBar: true
     }
 }
 
