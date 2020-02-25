@@ -1,5 +1,6 @@
 :root {
     --header-hgt: 6vh;
+    --half-header-hgt: 3vh;             /*The browser is pissing me off by removing my divisions by 2 when compiling so I fucking created this variable to fix it.*/
 }
 
 .header {
@@ -69,8 +70,8 @@
 .header .react-logo {
     width: calc(var(--header-hgt)*0.75);
     filter: brightness(0) invert(1);
-    padding-left: calc(calc(var(--header-hgt)/2) - calc((var(--header-hgt)*0.75)/2));
-    padding-top: calc(calc(var(--header-hgt)/2) - calc((var(--header-hgt)*0.75)/2))
+    padding-left: calc(var(--half-header-hgt) - var(--half-header-hgt)*0.75);
+    padding-top: calc(var(--half-header-hgt) - var(--half-header-hgt)*0.75)
 }
 
 .header .menu-button {
@@ -83,8 +84,8 @@
 .header .menu-button img {
     width: calc(var(--header-hgt)*0.75);
     filter: brightness(0) invert(1);
-    padding-left: calc(calc(var(--header-hgt)/2) - calc((var(--header-hgt)*0.75)/2));
-    padding-top: calc(calc(var(--header-hgt)/2) - calc((var(--header-hgt)*0.75)/2))
+    padding-left: calc(var(--half-header-hgt) - var(--half-header-hgt)*0.75);
+    padding-top: calc(var(--half-header-hgt) - var(--half-header-hgt)*0.75)
 }
 
 .header .links {

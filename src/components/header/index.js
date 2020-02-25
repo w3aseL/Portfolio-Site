@@ -38,9 +38,9 @@ class Header extends React.Component {
                     {Object.keys(routes).map((key, i) => (<TabButton label={key} to={routes[key].to} exact={routes[key].to} location={this.props.location} />))}
                 </div>
         
-                <div class="react-sec">
+                <a class="react-sec" href="https://reactjs.org/">
                     <p>Powered by React</p>
-                </div>
+                </a>
             </div>
         );
         else return (
