@@ -8,7 +8,7 @@
     background-color: #DEA731;
     height: 88vh;
     width: 100vw;
-    padding-top: 6vh;
+    position: relative;
     display: flex;
     flex-flow: row;
     justify-content: initial;

@@ -38,3 +38,18 @@
     transform: scaleX(1);
     transition: transform 250ms ease-in-out;
   }
+
+  .tab-div-mobile {
+    height: calc(var(--header-hgt)*0.65);
+    width: 100%;
+    background-color: #393e46;
+  }
+
+  .tab-item-mobile {
+    display:block;
+    font-size: calc(var(--header-hgt)/3.25);
+    width:50%;
+    padding-left: 4.5%;
+    padding-top: calc(calc(var(--header-hgt)*0.65)/6);
+    color: white;
+  }
