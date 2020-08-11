@@ -1,0 +1,95 @@
+:root {
+  --header-hgt: 6vh;
+  --half-header-hgt: 3vh;             /*The browser is pissing me off by removing my divisions by 2 when compiling so I fucking created this variable to fix it.*/
+}
+
+.header {
+  display: flex;
+  flex-flow: row;
+  justify-content: initial;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: var(--header-hgt);
+  background-color: #393e46;
+  z-index: 100;
+
+  font-family: 'Roboto', 'sans-serif';
+}
+
+/*     Desktop      */
+
+.tab-list {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: row;
+  justify-content: initial;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.logo-sec {
+  float: left;
+}
+
+.header-logo {
+  width: calc(var(--header-hgt)*2);
+  padding-left: 5%;
+}
+
+.react-sec {
+  padding-right: 2.5%;
+  float: right;
+  display: flex;
+  flex-flow: row-reverse;
+  justify-content: initial;
+  align-self: flex-end;
+  white-space: nowrap;
+}
+
+.react-sec p {
+  position: relative;
+  color: #ffffff;
+  font-size: calc(var(--header-hgt)/3.25);
+  /*text-shadow: -1px 0 #999999, 1px 0 #999999, 0 1px #999999, 0 -1px #999999;*/
+}
+
+/*    Mobile       */
+.header .header-logo-mobile {
+  margin: auto;
+  align-self: center;
+  width: calc(var(--header-hgt)*2);
+}
+
+.header .mobile-link {
+  height: var(--header-hgt);
+  width: var(--header-hgt);
+}
+
+.header .react-logo {
+  width: calc(var(--header-hgt)*0.75);
+  filter: brightness(0) invert(1);
+  padding-left: calc(var(--half-header-hgt) - var(--half-header-hgt)*0.75);
+  padding-top: calc(var(--half-header-hgt) - var(--half-header-hgt)*0.75)
+}
+
+.header .menu-button {
+  height: var(--header-hgt);
+  width: var(--header-hgt);
+
+  cursor: pointer
+}
+
+.header .menu-button img {
+  width: calc(var(--header-hgt)*0.75);
+  filter: brightness(0) invert(1);
+  padding-left: calc(var(--half-header-hgt) - var(--half-header-hgt)*0.75);
+  padding-top: calc(var(--half-header-hgt) - var(--half-header-hgt)*0.75)
+}
+
+.header .links {
+  position: relative;
+  width: 100%;
+  background-color: #393e46;
+}

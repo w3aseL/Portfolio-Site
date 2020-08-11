@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "lodash.throttle": "^4.1.1",
+    "node-sass": "^4.14.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",

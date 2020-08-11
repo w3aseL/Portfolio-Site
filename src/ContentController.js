@@ -1,63 +1,76 @@
 import React from 'react';
-import './contentcontroller.css';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route
-} from "react-router-dom";
-import Page from './components/page/index'
-import Header from './components/header/index'
-import Footer from './components/footer/index'
-import Home from './pages/home/index';
-import About from './pages/about/index';
-import Portfolio from './pages/portfolio/index';
-import Socials from './pages/socials/index';
-import Error from './pages/error/index';
 
-const ROUTES = {
-    Home: {
-        to: '/',
-        exact: true,
-        component: Home,
-        showOnTabBar: false
-    },
-    About: {
-        to: '/about',
-        exact: false,
-        component: About,
-        showOnTabBar: true
-    },
-    Portfolio: {
-        to: '/portfolio',
-        exact: false,
-        component: Portfolio,
-        showOnTabBar: true
-    },
-    Socials: {
-        to: '/socials',
-        exact: false,
-        component: Socials,
-        showOnTabBar: true
-    }
-}
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
+
+import { Footer, Header } from './components';
+import { About, Error, Home, Portfolio, Socials } from './pages';
+
+const ROUTES = [
+  {
+    name: "Home",
+    to: '/',
+    exact: true,
+    component: Home,
+    showOnTabBar: false
+  },
+  {
+    name: "Home-Reroute",
+    to: '/home',
+    exact: true,
+    component: () => <Redirect to="/" />,
+    showOnTabBar: false
+  },
+  {
+    name: "About",
+    to: '/about',
+    exact: false,
+    component: About,
+    showOnTabBar: true
+  },
+  {
+    name: "Portfolio",
+    to: '/portfolio',
+    exact: false,
+    component: Portfolio,
+    showOnTabBar: true
+  },
+  {
+    name: "Socials",
+    to: '/socials',
+    exact: false,
+    component: Socials,
+    showOnTabBar: true
+  },
+  {
+    name: "Socials",
+    to: '**',
+    exact: false,
+    component: Error,
+    showOnTabBar: false
+  }
+]
 
 class ContentController extends React.Component {
-    render() {
-        return (
-            <React.Fragment>
-                <Router>
-                    <Header routes={ROUTES} />
-                    <Switch>
-                        {Object.keys(ROUTES).map((key, i) => (
-                            <Route exact={ROUTES[key].exact} path={ROUTES[key].to} render={(props) => (<Page {...props} component={ROUTES[key].component} title={key} />)}/>
-                        ))}
-                        <Route render={(props) => (<Page {...props} component={Error} />)} />
-                    </Switch>
-                </Router>
-                <Footer />
-            </React.Fragment>
-        );
-    }
+  render() {
+    return (
+      <React.Fragment>
+        <Router>
+          <Header routes={ROUTES} />
+          <Switch>
+            {ROUTES.map(({exact, to, component}, i) => (
+              <Route exact={exact} path={to} component={component} />
+            ))}
+          </Switch>
+        </Router>
+        <Footer />
+      </React.Fragment>
+    );
+  }
 }
 
 export default ContentController;

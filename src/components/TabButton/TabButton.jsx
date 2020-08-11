@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 
-import './tab-button.css';
+import './TabButton.scss';
 
 class TabButton extends React.Component {
   render() {
@@ -15,5 +15,7 @@ class TabButton extends React.Component {
     );
   }
 }
+
+export { TabButton };
 
 export default TabButton;
