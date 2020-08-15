@@ -1,12 +1,15 @@
 import React from 'react';
-import './Portfolio.scss';
+
+import { Container, Row, Col } from "reactstrap";
+
+import { Construction } from "../../components";
 
 class Portfolio extends React.Component {
   render() {
     return (
-      <div class="portfolio">
-        <p>WIP</p>
-      </div>
+      <Container>
+        <Construction />
+      </Container>
     );
   }
 }

@@ -1,58 +1,57 @@
 import React from 'react';
-import './Footer.scss';
 
-const FOOTER_SOCIALS = {
-  twitter: {
-    href: "https://twitter.com/_w3aseL"
+import { Nav, Navbar, NavItem, NavLink, Container, Row, Col, Button } from 'reactstrap';
+
+const SOCIALS = [
+  {
+    name: "twitter",
+    url: "https://w3sl.link/tweet",
+    icon: "fab fa-twitter"
   },
-  twitch: {
-    href: "https://www.twitch.tv/w3aseL/"
+  {
+    name: "youtube",
+    url: "https://w3sl.link/yt",
+    icon: "fab fa-youtube"
   },
-  youtube: {
-    href: "https://www.youtube.com/user/WeaselBuilds"
+  {
+    name: "twitch",
+    url: "https://w3sl.link/twitch",
+    icon: "fab fa-twitch"
   },
-  github: {
-    href: "https://github.com/w3aseL"
+  {
+    name: "github",
+    url: "https://w3sl.link/github",
+    icon: "fab fa-github"
   },
-  email: {
-    href: "mailto:contact@noahtemplet.dev"
+  {
+    name: "linkedin",
+    url: "https://w3sl.link/in",
+    icon: "fab fa-linkedin-in"
   }
-}
+]
 
 class Footer extends React.Component {
   render() {
-    var isMobile = window.innerWidth < 480;
-
-    if (!isMobile) return (
-      <div class="footer">
-        <div class="media-footer">
-          {Object.keys(FOOTER_SOCIALS).map((key, i) => (
-            <a href={FOOTER_SOCIALS[key].href}>
-              <img class="footer-img" src={require(`../../assets/footer/${key}.png`)} />
-            </a>
-          ))}
-        </div>
-
-        <div class="text-footer">
-          <p class="copyright-text">{'\u00A9'} {new Date().getFullYear()} Noah Templet</p>
-        </div>
-      </div>
-    );
-    else return (
-      <div class="footer-mobile">
-        <div class="copyright-text">
-          <p>{'\u00A9'} {new Date().getFullYear()} Noah Templet</p>
-        </div>
-
-        <div class="media">
-          {Object.keys(FOOTER_SOCIALS).map((key, i) => (
-            <a href={FOOTER_SOCIALS[key].href}>
-              <img src={require(`../../assets/footer/${key}.png`)} />
-            </a>
-          ))}
-        </div>
-      </div>
-    );
+    return(
+      <footer>
+        <Navbar color="dark" dark>
+          <Container className="mt-2 mb-2">
+            <Row className="d-flex w-100 ml-auto mr-auto">
+              <Col xs="12" md="6" className="d-flex justify-content-center justify-content-md-start">
+                {SOCIALS.map(({ name, url, icon }, i) => (
+                  <Button className={`btn-circle ${i > 0 && "ml-1"} ${i < SOCIALS.length-1 && "mr-1"}`} size="md" color={name} outline href={url} target="_blank">
+                    <i className={icon} />
+                  </Button>
+                ))}
+              </Col>
+              <Col xs="12" md="6" className="mt-3 mt-md-auto mb-auto">
+                <p className="mt-auto mb-auto text-center text-md-right text-white">© 2020 Noah Templet</p>
+              </Col>
+            </Row>
+          </Container>
+        </Navbar>
+      </footer>
+    )
   }
 }
 

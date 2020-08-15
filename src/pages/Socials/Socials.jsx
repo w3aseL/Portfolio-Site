@@ -1,12 +1,15 @@
 import React from 'react';
-import './Socials.scss';
+
+import { Container, Row, Col } from "reactstrap";
+
+import { Construction } from "../../components";
 
 class Socials extends React.Component {
   render() {
     return (
-      <div class="socials">
-        <p>WIP</p>
-      </div>
+      <Container>
+        <Construction />
+      </Container>
     );
   }
 }

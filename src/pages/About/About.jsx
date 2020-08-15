@@ -1,12 +1,15 @@
 import React from 'react';
-import './About.scss';
+
+import { Container, Row, Col } from "reactstrap";
+
+import { Construction } from "../../components";
 
 class About extends React.Component {
   render() {
     return (
-      <div class="about">
-        <p>WIP</p>
-      </div>
+      <Container className="mt-5">
+        <Construction />
+      </Container>
     );
   }
 }

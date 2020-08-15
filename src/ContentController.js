@@ -60,14 +60,18 @@ class ContentController extends React.Component {
     return (
       <React.Fragment>
         <Router>
-          <Header routes={ROUTES} />
-          <Switch>
-            {ROUTES.map(({exact, to, component}, i) => (
-              <Route exact={exact} path={to} component={component} />
-            ))}
-          </Switch>
+          <div className="background d-flex flex-column">
+            <Header routes={ROUTES} style={{ flex: "0 1 auto" }} />
+            <div style={{ flex: "1 1 auto" }}>
+              <Switch>
+                {ROUTES.map(({exact, to, component}, i) => (
+                  <Route exact={exact} path={to} component={component} />
+                ))}
+              </Switch>
+            </div>
+            <Footer style={{ flex: "0 1 auto" }} />
+          </div>
         </Router>
-        <Footer />
       </React.Fragment>
     );
   }
