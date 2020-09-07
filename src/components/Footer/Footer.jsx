@@ -29,9 +29,14 @@ const SOCIALS = [
     icon: "fab fa-linkedin-in"
   },
   {
+    name: "google-blue",
+    url: "mailto:Noah%20Templet<contact@noahtemplet.dev>",
+    icon: "far fa-user-circle"
+  },
+  {
     name: "gmail",
-    url: "mailto:contact@noahtemplet.dev",
-    icon: "fas fa-at"
+    url: "mailto:Noah%20Templet<business@noahtemplet.dev>",
+    icon: "fas fa-briefcase"
   }
 ]
 

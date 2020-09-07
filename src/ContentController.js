@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 
 import { Footer, Header } from './components';
-import { About, Error, Home, Portfolio, Socials } from './pages';
+import { About, Error, Home, Portfolio, Socials, Contact } from './pages';
 
 const ROUTES = [
   {
@@ -47,7 +47,14 @@ const ROUTES = [
     showOnTabBar: false
   },
   {
-    name: "Socials",
+    name: "Contact",
+    to: "/contact",
+    exact: false,
+    component: Contact,
+    showOnTabBar: true
+  },
+  {
+    name: "Error",
     to: '**',
     exact: false,
     component: Error,
