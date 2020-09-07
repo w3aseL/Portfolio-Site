@@ -30,21 +30,21 @@ const ROUTES = [
     to: '/about',
     exact: false,
     component: About,
-    showOnTabBar: true
+    showOnTabBar: false
   },
   {
     name: "Portfolio",
     to: '/portfolio',
     exact: false,
     component: Portfolio,
-    showOnTabBar: true
+    showOnTabBar: false
   },
   {
     name: "Socials",
     to: '/socials',
     exact: false,
     component: Socials,
-    showOnTabBar: true
+    showOnTabBar: false
   },
   {
     name: "Socials",

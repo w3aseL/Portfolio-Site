@@ -8,7 +8,7 @@ const SOCIALS = [
     url: "https://w3sl.link/tweet",
     icon: "fab fa-twitter"
   },
-  {
+  /*{
     name: "youtube",
     url: "https://w3sl.link/yt",
     icon: "fab fa-youtube"
@@ -17,7 +17,7 @@ const SOCIALS = [
     name: "twitch",
     url: "https://w3sl.link/twitch",
     icon: "fab fa-twitch"
-  },
+  },*/
   {
     name: "github",
     url: "https://w3sl.link/github",
@@ -27,6 +27,11 @@ const SOCIALS = [
     name: "linkedin",
     url: "https://w3sl.link/in",
     icon: "fab fa-linkedin-in"
+  },
+  {
+    name: "gmail",
+    url: "mailto:contact@noahtemplet.dev",
+    icon: "fas fa-at"
   }
 ]
 
