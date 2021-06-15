@@ -26,27 +26,6 @@ export const ROUTES = [
     showOnTabBar: false
   },
   {
-    name: "About",
-    to: '/about',
-    exact: false,
-    component: About,
-    showOnTabBar: false
-  },
-  {
-    name: "Portfolio",
-    to: '/portfolio',
-    exact: false,
-    component: Portfolio,
-    showOnTabBar: false
-  },
-  {
-    name: "Socials",
-    to: '/socials',
-    exact: false,
-    component: Socials,
-    showOnTabBar: false
-  },
-  {
     name: "Contact",
     to: "/contact",
     exact: false,
