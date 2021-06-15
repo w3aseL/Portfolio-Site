@@ -1,9 +1,10 @@
 import React from 'react';
 import './Header.scss';
 
+import { isBrowser } from "react-device-detect"
 import { withRouter } from 'react-router-dom';
 
-import { Container, Nav, Navbar, Collapse, NavbarToggler, NavbarBrand, NavItem, NavLink } from 'reactstrap';
+import { Container, Nav, Navbar, Collapse, NavbarToggler, NavbarBrand, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 import logo from '../../assets/logo.png';
 import reactLogo from '../../assets/react-logo.png'
@@ -42,6 +43,14 @@ class NoRouterHeader extends React.Component {
               ))}
             </Nav>
           </Collapse>
+          {isBrowser && <UncontrolledDropdown setActiveFromChild>
+            <DropdownToggle tag="p" className="nav-link mb-0 text-secondary" caret>
+              External Links
+            </DropdownToggle>
+            <DropdownMenu>
+            <DropdownItem disabled>Coming Soon!</DropdownItem>
+          </DropdownMenu>
+        </UncontrolledDropdown>}
         </Container>
       </Navbar>
     )

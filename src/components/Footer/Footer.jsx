@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Nav, Navbar, NavItem, NavLink, Container, Row, Col, Button } from 'reactstrap';
 
-const SOCIALS = [
+export const SOCIALS = [
   {
     name: "twitter",
     url: "https://w3sl.link/tweet",
@@ -55,7 +55,7 @@ class Footer extends React.Component {
                 ))}
               </Col>
               <Col xs="12" md="6" className="mt-3 mt-md-auto mb-auto">
-                <p className="mt-auto mb-auto text-center text-md-right text-white">© 2020 Noah Templet</p>
+                <p className="mt-auto mb-auto text-center text-md-right text-white">© {new Date().getFullYear()} Noah Templet</p>
               </Col>
             </Row>
           </Container>
