@@ -1,0 +1,16 @@
+.carousel-container {
+  max-width: 100%;
+  display: flex;
+}
+
+.carousel-container .left-section,
+.carousel-container .right-section {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-container .content {
+  width: 70%;
+}
