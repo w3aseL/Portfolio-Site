@@ -25,7 +25,7 @@ export const Home = props => {
 
   const checkTimeout = (sec=1) => {
     if(state.loading && !state.data) {
-      setTimeout(() => checkTimeout(), sec * 1000)
+      setTimeout(() => checkTimeout(0.25), sec * 1000)
     } else {
       setIntroHidden(true)
     }
@@ -67,14 +67,14 @@ export const Home = props => {
   if(!state.loading && !state.data && !state.error) {
     setState(prevState => ({ ...prevState, loading: true }))
 
-    setTimeout(() => checkTimeout(), 2500)
+    setTimeout(() => checkTimeout(), 1000)
 
     request("/portfolio", null, "GET")
     .then(res => setState(prevState => ({ ...prevState, loading: false, data: res.data })))
     .catch(err => setState(prevState => ({ ...prevState, loading: false, error: err })))
   }
 
-  console.log(state)
+  // console.log(state)
 
   return (
     <Intro hide={hideIntro} loading={state.loading}>
@@ -89,9 +89,7 @@ export const Home = props => {
                     <h1 className="w-100 text-white text-left text-md-center">Hello! I'm Noah.</h1>
                     <h4 className="w-100 text-light text-left text-md-center">Welcome to my website!</h4>
                     <p className="w-100 mt-5 text-light text-left text-md-center">
-                      More stuff on my site is <em><strong>coming soon</strong></em>.
-                      <br /><br />
-                      Feel free to check out my socials in the footer!
+                      Here you can get view all of my gained education, experience, projects, and tools that I have worked with.
                     </p>
                   </Col>
                   <Col md="6">
@@ -227,6 +225,9 @@ export const Home = props => {
                     More stuff on my site is <em><strong>coming soon</strong></em>.
                     <br /><br />
                     Feel free to check out my socials in the footer!
+                    <br /><br />
+                    If you're seeing this, you're likely on the mobile version of my site!
+                    <em>Please view this site on a desktop, laptop, or tablet!</em>
                   </p>
                 </Col>
               </Row>

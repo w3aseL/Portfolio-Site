@@ -27,7 +27,7 @@ export const EducationCard = ({ education }) => {
             <img width="100%" height="auto" src={school_logo}></img>
           </Col>
           <Col sm="9" className="ml-sm-auto mr-sm-auto">
-            <h4 className="text-white w-auto pb-0 mb-0"><em>{school_name}</em></h4>
+            <h4 className="w-auto pb-0 mb-0"><em>{school_name}</em></h4>
             <p className="text-muted">{school_type}</p>
           </Col>
         </Row>
