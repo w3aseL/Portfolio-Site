@@ -9,6 +9,21 @@ import { SOCIALS } from "../Footer"
 import PINGU_IMG from "../../assets/pingu_construction.png"
 import LOGO from "../../assets/logo.png"
 
+// Gonna add more of these for the lolz
+const FLAVOR_TEXT = [
+  "RESTful APIs are cool as hell.",
+  "ANIMATIONS EVERYWHERE!",
+  "Doing a lot of \"Reacting\"...",
+  "Ever tried some Rust?",
+  "HTML is NOT a programming language...",
+  "Flavorful. :)",
+  "*points to some heap of memory*",
+  "Eyes up, Guardian.",
+  "INDEED."
+]
+
+const SELECTED_FLAVOR_TEXT = Math.floor(Math.random() * FLAVOR_TEXT.length)
+
 export const Intro = ({ children, hide, loading, inConstruction }) => { 
   const [construction, setConstruction] = useState(false)
   const [hideLoading, setHidden] = useState(false)
@@ -37,7 +52,7 @@ export const Intro = ({ children, hide, loading, inConstruction }) => {
               </div>
               <div className="intro-br" />
               <h1><em>{loading ? "Loading" : "Preparing"} Portfolio...</em></h1>
-              <h4>Something something flavor text here.</h4>
+              <h4>{FLAVOR_TEXT[SELECTED_FLAVOR_TEXT]}</h4>
             </div>
           }
           {construction && hideLoading &&
