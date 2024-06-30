@@ -74,7 +74,7 @@ export const Home = props => {
     .catch(err => setState(prevState => ({ ...prevState, loading: false, error: err })))
   }
 
-  // console.log(state)
+  console.log(state)
 
   return (
     <Intro hide={hideIntro} loading={state.loading}>
@@ -108,12 +108,12 @@ export const Home = props => {
                   <Row className="d-flex">
                     {state.data.education.map((edu, i) => (
                       <Col md="6">
-                        <EducationCard education={edu} />
+                        <EducationCard education={edu} key={i} />
                       </Col>
                     ))}
                   </Row>
                 </div>
-                <div id="tools" className="section">
+                <div id="tools" className="section" class={`${state.data.tools?.length == 0 ? 'd-none' : ''}`}>
                   <Row className="mt-6">
                     <h1 className="w-100 text-center text-white">Tools</h1>
                   </Row>
@@ -128,7 +128,7 @@ export const Home = props => {
                       <Row className="d-flex justify-content-center mb-4">
                         {state.data.tools[key].map((tool, i) => (
                           <Col md="1" className="d-flex">
-                            <img onClick={e => updateTool(e, key, i)} src={tool.logo_url} width="100%" height="auto" className="mt-auto mb-auto" />
+                            <img onClick={e => updateTool(e, key, i)} src={tool.logoUrl} width="100%" height="auto" className="mt-auto mb-auto" />
                           </Col>
                         ))}
                       </Row>
@@ -138,7 +138,7 @@ export const Home = props => {
                     <ToolSection tool={state.data.tools[activeTool.category][activeTool.tool]} />
                   }
                 </div>
-                <div id="projects" className="section">
+                <div id="projects" className="section" class={`${state.data.projects?.length == 0 ? 'd-none' : ''}`}>
                   <Row className="mt-6">
                     <h1 className="w-100 text-center text-white">Projects</h1>
                   </Row>
@@ -159,23 +159,23 @@ export const Home = props => {
                     <h1 className="w-100 text-center text-white">Positions</h1>
                   </Row>
                   <Row className="d-flex justify-content-center">
-                    {state.data.positions.map(({ job_title, company_name, company_url, logo_url, description, start_date, end_date }, i) => (
+                    {state.data.positions.map(({ jobTitle, companyName, companyUrl, logoUrl, description, startDate, endDate }, i) => (
                       <Col md="6">
                         <div className="job-card mb-2">
                           <div className="d-flex">
                             <div className="img-section">
-                              <img width="100%" height="auto" src={logo_url} />
+                              <img width="100%" height="auto" src={logoUrl} />
                             </div>
                             <div className="title-section">
-                              <h4 className="w-100 mb-1">{job_title}</h4>
-                              {company_url ? 
-                                <a href={company_url}>
-                                  <h5 className="w-100 mb-1">{company_name}</h5>
+                              <h4 className="w-100 mb-1">{jobTitle}</h4>
+                              {companyUrl != null && companyUrl != '' ? 
+                                <a href={companyUrl}>
+                                  <h5 className="w-100 mb-1">{companyName}</h5>
                                 </a>
                               :
-                                <h5 className="w-100 mb-1">{company_name}</h5>
+                                <h5 className="w-100 mb-1">{companyName}</h5>
                               }
-                              <p className="w-100 mb-0">{`${processPositionTime(start_date)} - ${processPositionTime(end_date)}`}</p>
+                              <p className="w-100 mb-0">{`${processPositionTime(startDate)} - ${processPositionTime(endDate)}`}</p>
                             </div>
                           </div>
                           <ReactMarkdown>{description}</ReactMarkdown>
@@ -199,10 +199,10 @@ export const Home = props => {
                           </tr>
                         </thead>
                         <tbody>
-                          {state.data.resumes.map(({ creation_date, url }, i) => (
+                          {state.data.resumes.map(({ creationDate, url }, i) => (
                             <tr>
                               <td>{i+1}</td>
-                              <td>{processPositionTime(creation_date)}</td>
+                              <td>{processPositionTime(creationDate)}</td>
                               <td><a href={url} target="_blank" download>Click to View!</a></td>
                             </tr>
                           ))}

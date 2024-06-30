@@ -4,9 +4,9 @@ import "./EducationCard.scss"
 import { Container, Row, Col } from "reactstrap"
 
 export const EducationCard = ({ education }) => {
-  const { id, school_name, school_logo, school_type, graduation_date, graduation_reward, major, gpa } = education
+  const { id, schoolName, schoolLogo, schoolType, graduationDate, rewardType, major, gpa } = education
 
-  const gradDate = new Date(graduation_date), hasGraduated = gradDate < new Date()
+  const gradDate = new Date(graduationDate), hasGraduated = gradDate < new Date()
 
   const dateToStr = date => `${date.getMonth()+1}/${date.getFullYear()}`
 
@@ -24,17 +24,17 @@ export const EducationCard = ({ education }) => {
       <Container className="mt-2 mb-2">
         <Row className="d-flex">
           <Col sm="3" className="ml-sm-auto mr-sm-auto">
-            <img width="100%" height="auto" src={school_logo}></img>
+            <img width="100%" height="auto" src={schoolLogo}></img>
           </Col>
           <Col sm="9" className="ml-sm-auto mr-sm-auto">
-            <h4 className="w-auto pb-0 mb-0"><em>{school_name}</em></h4>
-            <p className="text-muted">{school_type}</p>
+            <h4 className="w-auto pb-0 mb-0"><em>{schoolName}</em></h4>
+            <p className="text-muted">{schoolType}</p>
           </Col>
         </Row>
         <Row className="d-flex">
           <Col sm="12">
             <p className="w-100 text-muted">
-              {`${majorAndRewardProcess(graduation_reward, major)}`}
+              {`${majorAndRewardProcess(rewardType, major)}`}
               <br/>
               {`${gpa} GPA`}
               <br/>
