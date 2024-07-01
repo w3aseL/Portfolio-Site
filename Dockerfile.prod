@@ -1,5 +1,6 @@
 # build environment
 FROM node:alpine as build
+RUN apk add g++ make py3-pip
 WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json .

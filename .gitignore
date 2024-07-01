@@ -26,3 +26,4 @@ package-lock.json
 
 # Ignore for in production
 docker-compose.prod-use.yml
+build.sh
