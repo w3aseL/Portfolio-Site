@@ -113,7 +113,7 @@ export const Home = props => {
                     ))}
                   </Row>
                 </div>
-                <div id="tools" className="section" class={`${state.data.tools?.length == 0 ? 'd-none' : ''}`}>
+                <div id="tools" className={`section ${state.data.projects?.length == 0 ? 'd-none' : ''}`}>
                   <Row className="mt-6">
                     <h1 className="w-100 text-center text-white">Tools</h1>
                   </Row>
@@ -128,7 +128,7 @@ export const Home = props => {
                       <Row className="d-flex justify-content-center mb-4">
                         {state.data.tools[key].map((tool, i) => (
                           <Col md="1" className="d-flex">
-                            <img onClick={e => updateTool(e, key, i)} src={tool.logoUrl} width="100%" height="auto" className="mt-auto mb-auto" />
+                            <img onClick={e => updateTool(e, key, i)} src={tool.logoURL} width="100%" height="auto" className="mt-auto mb-auto" />
                           </Col>
                         ))}
                       </Row>
@@ -138,7 +138,7 @@ export const Home = props => {
                     <ToolSection tool={state.data.tools[activeTool.category][activeTool.tool]} />
                   }
                 </div>
-                <div id="projects" className="section" class={`${state.data.projects?.length == 0 ? 'd-none' : ''}`}>
+                <div id="projects" className={`section ${state.data.projects?.length == 0 ? 'd-none' : ''}`}>
                   <Row className="mt-6">
                     <h1 className="w-100 text-center text-white">Projects</h1>
                   </Row>
@@ -146,7 +146,7 @@ export const Home = props => {
                   <Row className="d-flex justify-content-center mb-4">
                     {state.data.projects.map((project, i) => (
                       <Col md="2" className="d-flex">
-                        <img src={project.logo_url} width="100%" height="auto" className="mt-auto mb-auto" onClick={e => updateProject(e, i)} />
+                        <img src={project.logoURL} width="100%" height="auto" className="mt-auto mb-auto" onClick={e => updateProject(e, i)} />
                       </Col>
                     ))}
                   </Row>
@@ -159,17 +159,17 @@ export const Home = props => {
                     <h1 className="w-100 text-center text-white">Positions</h1>
                   </Row>
                   <Row className="d-flex justify-content-center">
-                    {state.data.positions.map(({ jobTitle, companyName, companyUrl, logoUrl, description, startDate, endDate }, i) => (
+                    {state.data.positions.map(({ jobTitle, companyName, companyURL, logoURL, description, startDate, endDate }, i) => (
                       <Col md="6">
                         <div className="job-card mb-2">
                           <div className="d-flex">
                             <div className="img-section">
-                              <img width="100%" height="auto" src={logoUrl} />
+                              <img width="100%" height="auto" src={logoURL} />
                             </div>
                             <div className="title-section">
                               <h4 className="w-100 mb-1">{jobTitle}</h4>
-                              {companyUrl != null && companyUrl != '' ? 
-                                <a href={companyUrl}>
+                              {companyURL != null && companyURL != '' ? 
+                                <a href={companyURL}>
                                   <h5 className="w-100 mb-1">{companyName}</h5>
                                 </a>
                               :

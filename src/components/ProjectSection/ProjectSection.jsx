@@ -7,21 +7,21 @@ import ReactMarkdown from "react-markdown";
 import { Carousel } from "../Carousel"
 
 export const ProjectSection = ({ project }) => {
-  const { name, logo_url, url, repo_url, description, images, tools } = project
+  const { name, logoURL, url, repoURL, description, images, tools } = project
 
   return (
     <div className="selected-section">
       <Container>
         <Row className="d-flex justify-content-center pt-2 mb-2">
           <Col sm="2">
-            <img width="100%" height="auto" src={logo_url} />
+            <img width="100%" height="auto" src={logoURL} />
           </Col>
           <Col sm="6">
             <a href={url} target="_blank">
               <h1 className="w-100 text-center">{name}</h1>
             </a>
-            {repo_url && 
-              <a href={repo_url} target="_blank"> 
+            {repoURL && 
+              <a href={repoURL} target="_blank"> 
                 <h4 className="w-100 text-center">Repository{" "}{<i className={"fas fa-link"} />}</h4>
               </a>
             }
@@ -49,7 +49,7 @@ export const ProjectSection = ({ project }) => {
         <Row className="d-flex justify-content-center pb-2">
           {tools.map((tool, i) => (
             <Col sm="2">
-              <img width="100%" height="auto" src={tool.logo_url} />
+              <img width="100%" height="auto" src={tool.logoURL} />
               <a href={tool.url} target="_blank"> 
                 <h4 className="w-100 text-center mt-2 mb-1">{tool.name}</h4>
               </a>

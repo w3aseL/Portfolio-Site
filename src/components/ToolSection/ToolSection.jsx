@@ -5,14 +5,14 @@ import { Container, Row, Col } from "reactstrap"
 import ReactMarkdown from "react-markdown"
 
 export const ToolSection = ({ tool }) => {
-  const { name, logo_url, url, description } = tool
+  const { name, logoURL, url, description } = tool
 
   return (
     <div className="selected-section">
       <Container>
         <Row className="d-flex justify-content-center pt-2 mb-2">
           <Col sm="2">
-            <img width="100%" height="auto" src={logo_url} />
+            <img width="100%" height="auto" src={logoURL} />
           </Col>
           <Col sm="4">
             <a href={url} target="_blank">
