@@ -113,7 +113,7 @@ export const Home = props => {
                     ))}
                   </Row>
                 </div>
-                <div id="tools" className={`section ${state.data.projects?.length == 0 ? 'd-none' : ''}`}>
+                <div id="tools" className={`section ${state.data.tools?.length == 0 ? 'd-none' : ''}`}>
                   <Row className="mt-6">
                     <h1 className="w-100 text-center text-white">Tools</h1>
                   </Row>
